@@ -16,11 +16,16 @@ public class Assignment3//class for running the main parts of the program, like 
          
          ArrayList<Point> points = new ArrayList<Point>(readFromFile(file, inFile, n));//build the list of points that was given in the file?
          
-         ClosestPair algoCP = new ClosestPair(points);//make the ClosestPair object(this also runs the algorithm in itself)
-         
-         //System.out.println("Problem solve time: " + algoCP.getTime() + " nanoseconds");//print out the solve time
-         //System.out.print(algoCP.toString());//print the solution
-         
+         if(points.size() >= 2)
+         {
+            ClosestPair algoCP = new ClosestPair(points);//make the ClosestPair object(this also runs the algorithm in itself)
+            //System.out.println("Problem solve time: " + algoCP.getTime() + " nanoseconds");//print out the solve time
+            //System.out.print(algoCP.toString());//print the solution
+         }
+         else
+         {
+            System.out.println("The number of points must be greater or equal to 2. Algorithm will not run.");
+         }
       }
       catch(ArrayIndexOutOfBoundsException AIOBe)//explained by the error message
       {
